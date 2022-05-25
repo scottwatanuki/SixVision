@@ -3,7 +3,6 @@
 # tensorflow is a library for deep learning
 # matplotlib displyas data
 # keras is a library based on tensorflow specifically for neural networks
-
 import numpy as np 
 import tensorflow as tf 
 from tensorflow.keras.utils import plot_model
@@ -24,7 +23,6 @@ from keras.layers import Dropout
 # Preprocessing the Training set
 # prevents overfitting; this is data augmentation
 # applies feature scaling to all pixels.
-
 image_size = 224
 input_shape = (image_size, image_size, 3) 
 print("success")
