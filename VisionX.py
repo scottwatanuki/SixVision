@@ -1,6 +1,11 @@
 # Importing the libraries
-import numpy as np
-import tensorflow as tf
+# numpy is for calculations
+# tensorflow is a library for deep learning
+# matplotlib displyas data
+# keras is a library based on tensorflow specifically for neural networks
+
+import numpy as np 
+import tensorflow as tf 
 from tensorflow.keras.utils import plot_model
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, GlobalMaxPooling2D
@@ -21,12 +26,13 @@ from keras.layers import Dropout
 # applies feature scaling to all pixels.
 
 image_size = 224
-input_shape = (image_size, image_size, 3)
+input_shape = (image_size, image_size, 3) 
 print("success")
 
 epochs = 150
 batch_size = 16
 
+#altering data to allow for better training
 train_datagen = ImageDataGenerator(rescale=1. / 255,
                                   rotation_range=40,
                                   width_shift_range=0.2,
@@ -116,18 +122,6 @@ e3 = model.compile(optimizer=Adam(lr=1e-4), loss='binary_crossentropy', metrics=
 e3history = model.fit(x=training_set, validation_data=test_set, epochs=epochs)
 e4 = model.compile(optimizer=Adam(lr=1e-5), loss='binary_crossentropy', metrics=['accuracy'])
 e4history = model.fit(x=training_set, validation_data=test_set, epochs=epochs)
-
-# training('1e-2', 1e-2)
-# lr1_pre = training('1e-2', 1e-2)
-#
-# training('1e-3', 1e-3)
-# lr2_pre = training('1e-3', 1e-3)
-#
-# training('1e-4', 1e-4)
-# lr3_pre = training('1e-4', 1e-4)
-#
-# training('1e-5', 1e-5)
-# lr4_pre = training('1e-5', 1e-5)
 
 plt.plot(e1.e1history["val_accuracy"], label='1e-2')
 plt.plot(e2.e2history["val_accuracy"], label='1e-3')
