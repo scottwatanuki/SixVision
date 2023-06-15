@@ -21,7 +21,7 @@ To use SixVision, you need to have the following dependencies installed:
 - keras
 
 You can install these dependencies using the following command:
-    pip install numpy tensorflow matplotlib keras
+```pip install numpy tensorflow matplotlib keras```
 
 ## Data Preprocessing
 Before training the model, it is necessary to preprocess the data. The following steps are performed:
